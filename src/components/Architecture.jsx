@@ -3,40 +3,40 @@ import './Architecture.css';
 
 const layers = [
     {
-        label: 'Data Ingestion',
-        sublabel: '50+ Sources',
-        sources: ['Satellite SAR', 'Carrier APIs', 'ELD/GPS', 'ERP Systems', 'Customs', 'Weather', 'Blockchain'],
+        label: 'Federated Data Network',
+        sublabel: 'Private & Secure',
+        sources: ['ERP Systems', 'Customs Data', 'Corporate Registries', 'Bill of Ladings', 'Sanctions Lists'],
         color: '#0080ff',
     },
     {
-        label: 'ETL Pipeline',
-        sublabel: 'Clean & Enrich',
-        sources: ['Validation', 'Normalization', 'Deduplication', 'Geocoding', 'Entity Resolution'],
+        label: 'Canonical Resolution',
+        sublabel: 'Entity Matching',
+        sources: ['Entity Deduplication', 'Address Standardization', 'Corporate Hierarchy', 'Beneficial Ownership', 'Product Classification'],
         color: '#00d4ff',
     },
     {
-        label: 'AI Graph Core',
-        sublabel: 'Neo4j + ML',
-        sources: ['Graph Database', 'Knowledge Graph', 'GNN Models', 'Anomaly Detection', 'Predictive Models'],
+        label: 'Universal Knowledge Graph',
+        sublabel: 'Living Map of Trade',
+        sources: ['Multi-Tier Connections', 'Shipment Flows', 'Supplier Relationships', 'Risk Propagation', 'Value Chain Mapping'],
         color: '#a855f7',
     },
     {
-        label: 'Intelligence',
-        sublabel: 'Inference & Action',
-        sources: ['Risk Scoring', 'ETA Prediction', 'Route Optimization', 'Agent Orchestration', 'Alert Engine'],
+        label: 'Inference Engine',
+        sublabel: 'Predictive AI',
+        sources: ['Forced Labor Risk (UFLPA)', 'Carbon Scoring (CBAM)', 'Tariff Engineering', 'Disruption Prediction', 'Network Resilience'],
         color: '#00e68a',
     },
     {
-        label: 'Presentation',
-        sublabel: 'Dashboard',
-        sources: ['3D Globe', 'Heatmaps', 'Real-Time Charts', 'Reports', 'API/Webhooks'],
+        label: 'Command Center',
+        sublabel: 'Actionable Insights',
+        sources: ['Compliance Audits', 'Sourcing Alternatives', 'Legal Justifications', 'Scenario Planning', 'Executive Dashboards'],
         color: '#ffb020',
     },
 ];
 
 const securityFeatures = [
-    { icon: '🔐', label: 'Zero-Trust Access' },
-    { icon: '🔒', label: 'AES-256 Encryption' },
+    { icon: '🔐', label: 'Federated Learning' },
+    { icon: '🔒', label: 'Differential Privacy' },
     { icon: '🛡️', label: 'GDPR/CCPA Compliant' },
     { icon: '📜', label: 'SOC 2 Type II' },
     { icon: '🏛️', label: 'Data Sovereignty' },

@@ -11,9 +11,9 @@ const steps = [
                 <rect x="6" y="13" width="12" height="8" rx="1" />
             </svg>
         ),
-        title: 'Connect & Onboard',
-        description: 'Upload your supplier list or connect ERP via API. VIGIL ingests your internal data alongside 50+ external sources — satellites, customs, carriers, weather.',
-        detail: 'CSV • SAP • Oracle • REST API',
+        title: 'Federated Connection',
+        description: 'Connect your ERP and supplier data securely. Using Federated Learning, your proprietary data never leaves your firewall, but contributes to (and benefits from) the global knowledge network.',
+        detail: 'Private • Secure • Federated',
     },
     {
         num: '02',
@@ -27,9 +27,9 @@ const steps = [
                 <path d="M7 7l3 3M17 7l-3 3M7 17l3-3M17 17l-3-3" />
             </svg>
         ),
-        title: 'Build Supply Graph',
-        description: 'VIGIL spins up your private graph database mapping every tier: raw materials → components → assembly → distribution → last mile.',
-        detail: 'Neo4j • Multi-Tier • Real-Time',
+        title: 'Map Your Value Chain',
+        description: 'RevoGlobal automatically resolves entities and maps your multi-tier value chain. See beyond tier 1 suppliers to raw materials, identifying beneficial owners and hidden dependencies.',
+        detail: 'N-Tier Visibility • Entity Resolution',
     },
     {
         num: '03',
@@ -40,20 +40,21 @@ const steps = [
                 <path d="M2 12l10 5 10-5" />
             </svg>
         ),
-        title: 'AI Risk Scan',
-        description: 'Machine learning models scan in real time: port congestion, tariff hikes, forced labor flags, weather disruptions, geopolitical risks. Instant scoring.',
-        detail: 'ML Models • NLP • Anomaly Detection',
+        title: 'AI Classification & Tax',
+        description: 'Generative AI automatically classifies products with HS codes, calculates tariffs, and generates legal justifications. Minimize duties and ensure 100% trade compliance.',
+        detail: 'HS Codes • Tariffs • Legal AI',
     },
     {
         num: '04',
         icon: (
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                <path d="M8 11l2 2 4-4" />
             </svg>
         ),
-        title: 'Autonomous Agents',
-        description: 'AI agents proactively suggest reroutes, source alternative suppliers, and even auto-negotiate with brokers — saving time and money automatically.',
-        detail: 'Auto-Reroute • Sourcing • Negotiation',
+        title: 'Deep Compliance (UFLPA)',
+        description: 'Screen every shipment against forced labor lists (UFLPA) and environmental regulations (CBAM). Trace products back to the mine or farm to prove ethical sourcing.',
+        detail: 'Forced Labor • Carbon Border Tax',
     },
     {
         num: '05',
@@ -64,9 +65,9 @@ const steps = [
                 <path d="M9 21V9" />
             </svg>
         ),
-        title: 'Dashboard Live',
-        description: 'Clean, zero-latency command center. Interactive 3D maps, risk heatmaps, carbon footprints, blockchain-verified passports — everything traceable.',
-        detail: 'Real-Time • Zero Latency • On-Chain',
+        title: 'Living Map',
+        description: 'Navigate a dynamic, real-time map of the global economy. Monitor port disruptions, geopolitical shifts, and supplier financial health in a single pane of glass.',
+        detail: 'Real-Time • Global • Dynamic',
     },
     {
         num: '06',
@@ -75,9 +76,9 @@ const steps = [
                 <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
             </svg>
         ),
-        title: 'Continuous Intelligence',
-        description: 'Get alerts via Slack, email, or app. Monthly savings reports track ROI. Your data stays encrypted — VIGIL never sells it. You own your graph.',
-        detail: 'Slack • Email • Encrypted • GDPR',
+        title: 'Resilient Action',
+        description: 'Move from insight to action. Collaborate with suppliers, auto-generate compliance documents, and optimize sourcing strategies to build a resilient, ethical supply chain.',
+        detail: 'Collaboration • Optimization',
     },
 ];
 
@@ -96,7 +97,7 @@ const HowItWorks = () => {
                         <span className="gradient-text">Savings</span> — In Minutes
                     </h2>
                     <p className="section-subtitle">
-                        A mid-size auto parts importer connects their ERP. Within minutes, VIGIL maps
+                        A mid-size auto parts importer connects their ERP. Within minutes, RevoGlobal maps
                         their entire multi-tier supply chain, identifies risks, and starts saving money.
                     </p>
                 </div>

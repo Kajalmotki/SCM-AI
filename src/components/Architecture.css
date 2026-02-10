@@ -1,155 +1,135 @@
-/* ===== Architecture ===== */
+/* ===== Architecture — Light theme ===== */
 .arch-section {
-    background: linear-gradient(180deg, var(--navy-900) 0%, var(--navy-800) 50%, var(--navy-900) 100%);
-    position: relative;
-    overflow: hidden;
+    background: var(--bg-primary);
 }
 
 .arch-bg-glow {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 800px;
-    height: 800px;
-    background: radial-gradient(circle, rgba(0, 128, 255, 0.06) 0%, transparent 70%);
-    border-radius: 50%;
-    pointer-events: none;
+    display: none;
 }
 
 .arch-header {
     text-align: center;
-    margin-bottom: 64px;
+    margin-bottom: 48px;
 }
 
 .arch-header .section-subtitle {
     margin: 0 auto;
 }
 
-/* Architecture Flow */
 .arch-flow {
+    max-width: 700px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 0;
-    max-width: 800px;
-    margin: 0 auto 64px;
 }
 
 .arch-layer {
-    width: 100%;
-    background: var(--white-04);
-    border: var(--border-subtle);
+    padding: 20px 24px;
+    border: 1px solid var(--border-light);
     border-radius: var(--radius-md);
-    padding: 24px;
-    transition: var(--transition-smooth);
+    background: var(--bg-primary);
+    margin-bottom: -1px;
 }
 
-.arch-layer:hover {
-    border-color: rgba(0, 128, 255, 0.2);
-    background: var(--white-08);
+.arch-layer:first-child {
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+}
+
+.arch-layer:last-child {
+    border-radius: 0 0 var(--radius-md) var(--radius-md);
+    margin-bottom: 0;
 }
 
 .layer-header {
     display: flex;
     align-items: center;
-    gap: 14px;
-    margin-bottom: 16px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid;
+    gap: 12px;
+    margin-bottom: 12px;
+    padding-bottom: 0;
+    border: none;
 }
 
 .layer-indicator {
-    width: 4px;
-    height: 36px;
-    border-radius: 2px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
     flex-shrink: 0;
 }
 
 .layer-label {
-    font-size: 1rem;
-    font-weight: 700;
-    color: var(--white);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-primary);
 }
 
 .layer-sublabel {
     font-size: 0.75rem;
-    color: var(--white-30);
-    font-family: var(--font-mono);
+    color: var(--text-tertiary);
 }
 
 .layer-sources {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 6px;
+    padding-left: 22px;
 }
 
 .source-tag {
-    padding: 4px 12px;
-    border: 1px solid;
-    border-radius: 100px;
-    font-size: 0.6875rem;
+    font-size: 0.72rem;
     font-weight: 500;
-    font-family: var(--font-mono);
-    opacity: 0.8;
+    padding: 3px 10px;
+    border: 1px solid;
+    border-radius: var(--radius-full);
+    background: transparent;
 }
 
 .arch-arrow {
-    padding: 8px 0;
     display: flex;
     justify-content: center;
+    padding: 4px 0;
 }
 
-/* Security Bar */
+.arch-arrow svg {
+    opacity: 0.3;
+}
+
+/* Security */
 .arch-security {
-    background: var(--white-04);
-    border: var(--border-subtle);
+    margin-top: 40px;
+    padding: 24px;
+    background: var(--bg-secondary);
     border-radius: var(--radius-lg);
-    padding: 32px 40px;
+    border: 1px solid var(--border-light);
 }
 
 .security-title {
-    font-size: 0.75rem;
+    font-size: 0.85rem;
     font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--white-30);
+    color: var(--text-primary);
+    margin-bottom: 16px;
     text-align: center;
-    margin-bottom: 24px;
 }
 
 .security-features {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 16px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .security-item {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 8px;
-    text-align: center;
+    gap: 6px;
 }
 
 .security-icon {
-    font-size: 1.5rem;
+    font-size: 0.9rem;
 }
 
 .security-label {
-    font-size: 0.75rem;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
     font-weight: 500;
-    color: var(--white-50);
-}
-
-@media (max-width: 768px) {
-    .security-features {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (max-width: 480px) {
-    .security-features {
-        grid-template-columns: repeat(2, 1fr);
-    }
 }

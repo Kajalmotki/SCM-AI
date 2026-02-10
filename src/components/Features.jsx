@@ -123,7 +123,7 @@ const Features = () => {
                         Enterprise-Grade <span className="gradient-text">Intelligence</span>
                     </h2>
                     <p className="section-subtitle">
-                        VIGIL combines satellite imagery, AI graph databases, blockchain verification,
+                        RevoGlobal combines satellite imagery, AI graph databases, blockchain verification,
                         and autonomous agents into one unified platform.
                     </p>
                 </div>

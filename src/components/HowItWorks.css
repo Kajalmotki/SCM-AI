@@ -1,11 +1,15 @@
-/* ===== How It Works ===== */
+/* ===== How It Works — Clean timeline ===== */
 .hiw-section {
-    background: linear-gradient(180deg, var(--navy-900) 0%, var(--navy-800) 50%, var(--navy-900) 100%);
+    background: var(--bg-secondary);
+}
+
+.hiw-section .bg-grid {
+    display: none;
 }
 
 .hiw-header {
     text-align: center;
-    margin-bottom: 80px;
+    margin-bottom: 56px;
 }
 
 .hiw-header .section-subtitle {
@@ -13,10 +17,10 @@
 }
 
 .hiw-timeline {
-    position: relative;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
+    gap: 24px;
+    position: relative;
 }
 
 .timeline-line {
@@ -24,82 +28,72 @@
 }
 
 .hiw-step {
-    position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 .step-connector {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
     margin-bottom: 16px;
 }
 
 .step-num {
-    font-family: var(--font-mono);
     font-size: 0.75rem;
-    font-weight: 600;
-    color: var(--electric-blue);
-    letter-spacing: 0.05em;
+    font-weight: 700;
+    color: var(--accent);
+    background: var(--accent-subtle);
+    padding: 4px 10px;
+    border-radius: var(--radius-full);
 }
 
 .step-dot {
-    flex: 1;
-    height: 1px;
-    background: linear-gradient(90deg, var(--electric-blue) 0%, transparent 100%);
+    display: none;
 }
 
 .step-card {
-    padding: 32px 28px;
-    height: 100%;
-    transition: var(--transition-smooth);
-}
-
-.step-card:hover {
-    transform: translateY(-4px);
+    flex: 1;
+    padding: 24px;
 }
 
 .step-icon {
-    width: 48px;
-    height: 48px;
-    border-radius: 12px;
-    background: var(--electric-blue-subtle);
-    border: 1px solid rgba(0, 128, 255, 0.15);
+    width: 40px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--electric-blue-light);
-    margin-bottom: 20px;
+    color: var(--accent);
+    margin-bottom: 14px;
 }
 
 .step-title {
-    font-size: 1.125rem;
-    font-weight: 700;
-    color: var(--white);
-    margin-bottom: 12px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 8px;
 }
 
 .step-desc {
-    font-size: 0.875rem;
-    line-height: 1.7;
-    color: var(--white-50);
-    margin-bottom: 16px;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 12px;
 }
 
 .step-detail {
-    font-family: var(--font-mono);
-    font-size: 0.6875rem;
-    color: var(--electric-blue);
-    opacity: 0.7;
-    letter-spacing: 0.03em;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--text-tertiary);
+    letter-spacing: 0.04em;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 900px) {
     .hiw-timeline {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 600px) {
     .hiw-timeline {
         grid-template-columns: 1fr;
     }

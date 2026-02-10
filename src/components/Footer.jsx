@@ -28,7 +28,7 @@ const Footer = () => {
                                     </linearGradient>
                                 </defs>
                             </svg>
-                            <span className="footer-logo-text">VIGIL</span>
+                            <span className="footer-logo-text">RevoGlobal</span>
                         </div>
                         <p className="footer-tagline">
                             Front-End Clarity.<br />Back-End Omniscience.
@@ -56,7 +56,7 @@ const Footer = () => {
 
                 <div className="footer-bottom">
                     <span className="footer-copyright">
-                        © {year} VIGIL Technologies, Inc. All rights reserved.
+                        © {year} RevoGlobal Technologies, Inc. All rights reserved.
                     </span>
                     <div className="footer-legal">
                         <a href="#">Privacy Policy</a>

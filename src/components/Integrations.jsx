@@ -57,7 +57,7 @@ const Integrations = () => {
                         <span className="gradient-text">50+ Integrations</span>, One Platform
                     </h2>
                     <p className="section-subtitle">
-                        VIGIL ingests data from satellites, carriers, ERPs, customs databases,
+                        RevoGlobal ingests data from satellites, carriers, ERPs, customs databases,
                         weather APIs, blockchain oracles, and more — all in real time.
                     </p>
                 </div>

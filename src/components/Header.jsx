@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './Header.css';
 
 const Header = () => {
@@ -21,7 +22,7 @@ const Header = () => {
     return (
         <header className={`vigil-header ${scrolled ? 'scrolled' : ''}`}>
             <div className="header-inner container">
-                <a href="#" className="header-logo" aria-label="VIGIL Home">
+                <a href="#" className="header-logo" aria-label="RevoGlobal Home">
                     <div className="logo-icon">
                         <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
                             <path d="M16 4L28 10V22L16 28L4 22V10L16 4Z" stroke="url(#logoGrad)" strokeWidth="1.5" fill="none" />
@@ -35,7 +36,7 @@ const Header = () => {
                             </defs>
                         </svg>
                     </div>
-                    <span className="logo-text">VIGIL</span>
+                    <span className="logo-text">RevoGlobal</span>
                 </a>
 
                 <nav className={`header-nav ${mobileOpen ? 'open' : ''}`}>
@@ -52,6 +53,9 @@ const Header = () => {
                 </nav>
 
                 <div className="header-actions">
+                    <Link to="/login" className="btn-secondary header-cta" style={{ padding: '10px 20px', fontSize: '0.8125rem' }}>
+                        Login
+                    </Link>
                     <a href="#cta" className="btn-primary header-cta">
                         Request Demo
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">

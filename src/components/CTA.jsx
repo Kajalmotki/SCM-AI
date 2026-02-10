@@ -27,10 +27,10 @@ const CTA = () => {
                             Get Started
                         </div>
                         <h2 className="cta-title">
-                            See <span className="gradient-text">VIGIL</span> in Action
+                            See <span className="gradient-text">RevoGlobal</span> in Action
                         </h2>
                         <p className="cta-description">
-                            Schedule a personalized demo and see how VIGIL can map your supply chain,
+                            Schedule a personalized demo and see how RevoGlobal can map your supply chain,
                             identify risks, and start saving you money — in under 30 minutes.
                         </p>
 
