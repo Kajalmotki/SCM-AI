@@ -621,7 +621,7 @@ const WorkspacesView = () => {
             </div>
 
             <div className="expo-subtabs">
-                {exposureSubTabs.map((tab, idx) => (
+                {exposureSubTabs.map((tab) => (
                     <button key={tab} className={`expo-subtab ${activeExpTab === tab ? 'active' : ''}`} onClick={() => setActiveExpTab(tab)}>
                         {tab}
                         <span className="subtab-count">1</span>

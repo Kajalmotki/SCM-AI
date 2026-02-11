@@ -264,7 +264,7 @@ const CounterNarcotics = () => {
                 </div>
 
                 {/* Network Grid */}
-                <div className="cn-network-grid">
+                <div className="cn-network-grid" style={{ position: 'relative', zIndex: 1 }}>
                     {companiesData.map((row, ri) => (
                         <div className="cn-network-row" key={ri}>
                             {row.map((company, ci) => (
@@ -278,16 +278,37 @@ const CounterNarcotics = () => {
                 </div>
 
                 {/* Connection Lines (decorative) */}
-                <svg className="cn-connections" width="100%" height="100%" style={{ position: 'absolute', top: 0, left: 0, pointerEvents: 'none', opacity: 0.15 }}>
-                    <line x1="15%" y1="10%" x2="30%" y2="25%" stroke="#94a3b8" strokeWidth="1" />
-                    <line x1="30%" y1="25%" x2="50%" y2="15%" stroke="#94a3b8" strokeWidth="1" />
-                    <line x1="50%" y1="15%" x2="70%" y2="30%" stroke="#94a3b8" strokeWidth="1" />
-                    <line x1="25%" y1="35%" x2="45%" y2="40%" stroke="#94a3b8" strokeWidth="1" />
-                    <line x1="45%" y1="40%" x2="65%" y2="35%" stroke="#94a3b8" strokeWidth="1" />
-                    <line x1="35%" y1="55%" x2="55%" y2="60%" stroke="#94a3b8" strokeWidth="1" />
-                    <line x1="55%" y1="60%" x2="75%" y2="50%" stroke="#94a3b8" strokeWidth="1" />
-                    <line x1="20%" y1="70%" x2="40%" y2="75%" stroke="#94a3b8" strokeWidth="1" />
-                    <line x1="60%" y1="70%" x2="80%" y2="65%" stroke="#94a3b8" strokeWidth="1" />
+                <svg className="cn-connections" viewBox="0 0 100 100" preserveAspectRatio="none" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', pointerEvents: 'none', zIndex: 0 }}>
+                    <defs>
+                        <marker id="arrowhead" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+                            <path d="M0,0 L6,3 L0,6 Z" fill="#64748b" opacity="0.6" />
+                        </marker>
+                    </defs>
+                    <g style={{ stroke: '#64748b', strokeWidth: 0.8, opacity: 0.5, fill: 'none', markerEnd: 'url(#arrowhead)' }}>
+                        {/* Row 1 to Row 2 */}
+                        <path d="M15 10 C 15 18 25 18 25 25" />
+                        <path d="M30 10 C 30 18 40 18 40 25" />
+                        <path d="M50 10 C 50 18 55 18 55 25" />
+                        <path d="M70 10 C 70 18 70 18 70 25" />
+
+                        {/* Row 2 to Row 3 */}
+                        <path d="M25 30 C 25 38 20 38 20 45" />
+                        <path d="M40 30 C 40 38 50 38 50 45" />
+                        <path d="M70 30 C 70 38 65 38 65 45" />
+
+                        {/* Row 3 to Row 4 */}
+                        <path d="M20 50 C 20 58 30 58 30 65" />
+                        <path d="M50 50 C 50 58 50 58 50 65" />
+                        <path d="M80 50 C 80 58 75 58 75 65" />
+
+                        {/* Row 4 to Row 5 */}
+                        <path d="M30 70 C 30 78 25 78 25 85" />
+                        <path d="M50 70 C 50 78 60 78 60 85" />
+
+                        {/* Row 5 to Row 6 */}
+                        <path d="M25 90 C 25 95 25 95 25 98" opacity="0.3" markerEnd="none" />
+                        <path d="M60 90 C 60 95 60 95 60 98" opacity="0.3" markerEnd="none" />
+                    </g>
                 </svg>
             </div>
         </div>

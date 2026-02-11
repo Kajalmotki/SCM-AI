@@ -51,11 +51,12 @@
     font-size: 0.8rem;
     color: rgba(255, 255, 255, 0.4);
     font-weight: 500;
-    transition: color 0.2s;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-link:hover {
     color: var(--text-on-dark);
+    transform: translateY(-1px);
 }
 
 /* Links */
@@ -86,11 +87,12 @@
 .footer-col-list a {
     font-size: 0.82rem;
     color: rgba(255, 255, 255, 0.45);
-    transition: color 0.2s;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-col-list a:hover {
     color: var(--text-on-dark);
+    padding-left: 4px;
 }
 
 /* Bottom */

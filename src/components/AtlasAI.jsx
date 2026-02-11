@@ -12,8 +12,6 @@ const AtlasAI = () => {
     /* Animate chat messages one by one */
     useEffect(() => {
         if (activeDemo !== 'chat') return;
-        setChatMessages([]);
-        setShowHeimdallTyping(false);
 
         const msgs = [
             { id: 1, type: 'system', text: 'John S. added Emma (Olympus Traders) to the Heimdall session', time: '12:22 PM EST' },
@@ -80,7 +78,11 @@ const AtlasAI = () => {
                         </button>
                         <button
                             className={`demo-toggle-btn ${!classificationDemo ? 'active' : ''}`}
-                            onClick={() => setActiveDemo('chat')}
+                            onClick={() => {
+                                setActiveDemo('chat');
+                                setChatMessages([]);
+                                setShowHeimdallTyping(false);
+                            }}
                         >
                             Collaboration
                         </button>

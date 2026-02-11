@@ -3,9 +3,16 @@
 /* Panel Cards */
 .panel-card {
     background: white;
-    border: 1px solid #e2e8f0;
-    border-radius: 12px;
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    border-radius: 14px;
     padding: 24px;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.panel-card:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    border-color: rgba(226, 232, 240, 0.5);
 }
 
 .panel-card-header {
@@ -45,14 +52,35 @@
 
 .kpi-card {
     background: white;
-    border: 1px solid #e2e8f0;
-    border-radius: 12px;
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    border-radius: 14px;
     padding: 20px;
-    transition: box-shadow 0.2s;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+    position: relative;
+    overflow: hidden;
+}
+
+.kpi-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #8b5cf6, #6366f1, #3b82f6);
+    opacity: 0;
+    transition: opacity 0.35s;
 }
 
 .kpi-card:hover {
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    transform: translateY(-3px);
+    border-color: rgba(226, 232, 240, 0.4);
+}
+
+.kpi-card:hover::before {
+    opacity: 1;
 }
 
 .kpi-header {
@@ -231,9 +259,16 @@
 
 .metric-card {
     background: white;
-    border: 1px solid #e2e8f0;
-    border-radius: 12px;
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    border-radius: 14px;
     padding: 24px;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+}
+
+.metric-card:hover {
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
+    transform: translateY(-2px);
 }
 
 .metric-card.concern {
@@ -491,12 +526,14 @@
     border: 1px solid #e2e8f0;
     background: white;
     color: #334155;
-    transition: all 0.2s;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .action-btn:hover {
     border-color: #cbd5e1;
     background: #f8fafc;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
 .action-btn.primary {
@@ -537,8 +574,13 @@
     border-bottom: 1px solid #f1f5f9;
 }
 
+.data-table tbody tr {
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .data-table tbody tr:hover {
-    background: #faf5ff;
+    background: linear-gradient(135deg, #faf5ff, #f5f3ff);
+    transform: scale(1.005);
 }
 
 .mono {

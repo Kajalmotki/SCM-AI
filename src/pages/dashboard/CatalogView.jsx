@@ -1,38 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './DashboardPanels.css';
-
-const productData = {
-    name: 'Smartphone',
-    icon: '📱',
-    hs10: '8517.12.0050',
-    country: 'United States',
-    enhancedDesc: 'Cellular Network Mobile Telephone, Li-Ion battery powered, aluminum alloy/glass housing',
-    productId: 'A93700001',
-    companyName: 'Volta Devices, Inc.',
-    revenue: '$3,951,254',
-    altaId: 'ALTA-H34Q-Z56D',
-    documentation: 'Volta Smartphone MSDS',
-    flags: [
-        { type: 'danger', label: 'UFLPA Exposure' },
-        { type: 'warning', label: 'Likely Misclassified' },
-        { type: 'success', label: 'USMCA Eligible' },
-    ],
-};
-
-const catalogProducts = [
-    { name: 'Smartphone', hs: '8517.12.0050', icon: '📱', company: 'Volta Devices, Inc.', country: '🇺🇸 USA', flags: 3 },
-    { name: 'Solar Panel X', hs: '8541.40.6020', icon: '☀️', company: 'SunBright Energy', country: '🇨🇳 China', flags: 2 },
-    { name: 'Pulse Watch', hs: '9102.12.8040', icon: '⌚', company: 'WristTech Corp.', country: '🇹🇼 Taiwan', flags: 0 },
-    { name: 'Flow Earbuds', hs: '8518.30.2000', icon: '🎧', company: 'AudioNova Inc.', country: '🇨🇦 Canada', flags: 1 },
-    { name: 'Lunar Tablet', hs: '8471.30.0100', icon: '💻', company: 'LunarTech Ltd.', country: '🇨🇳 China', flags: 2 },
-    { name: 'SoundSphere', hs: '8518.22.0000', icon: '🔊', company: 'SphereAudio Co.', country: '🇲🇽 Mexico', flags: 1 },
-];
+import DataService from '../../services/dataService';
 
 const tabs = ['Overview', 'Value Chains', 'Passports', 'Country of Origin', 'Duties', 'HS Codes', 'FTA', 'PGA', 'Section 232'];
 
 const CatalogView = () => {
+    const [products, setProducts] = useState([]);
     const [selectedProduct, setSelectedProduct] = useState(null);
     const [activeProductTab, setActiveProductTab] = useState('Overview');
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const loadCatalog = async () => {
+            setLoading(true);
+            try {
+                const data = await DataService.getCatalog();
+                setProducts(data);
+            } catch (error) {
+                console.error("Failed to load catalog", error);
+            } finally {
+                setLoading(false);
+            }
+        };
+        loadCatalog();
+    }, []);
+
+    if (loading) {
+        return <div className="loading-state">Loading Product Catalog...</div>;
+    }
 
     if (selectedProduct !== null) {
         return (
@@ -42,8 +37,8 @@ const CatalogView = () => {
                     <button className="back-btn" onClick={() => setSelectedProduct(null)}>
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7" /></svg>
                     </button>
-                    <span className="detail-product-icon">{productData.icon}</span>
-                    <h2 className="detail-product-name">{productData.name}</h2>
+                    <span className="detail-product-icon">{selectedProduct.icon}</span>
+                    <h2 className="detail-product-name">{selectedProduct.name}</h2>
                 </div>
 
                 {/* Tabs */}
@@ -69,45 +64,50 @@ const CatalogView = () => {
                                 <div className="detail-field">
                                     <span className="field-label">Provided Goods Description</span>
                                     <div className="field-value">
-                                        {productData.name}
+                                        {selectedProduct.name}
                                         <div className="field-badges">
-                                            {productData.flags.map((f, i) => (
+                                            {selectedProduct.flagsList && selectedProduct.flagsList.map((f, i) => (
                                                 <span key={i} className={`flag-badge flag-${f.type}`}>
                                                     <span className="flag-diamond">◆</span> {f.label}
                                                 </span>
                                             ))}
+                                            {(!selectedProduct.flagsList || selectedProduct.flagsList.length === 0) && (
+                                                <span className="flag-badge flag-success">
+                                                    <span className="flag-diamond">◆</span> Compliant
+                                                </span>
+                                            )}
                                         </div>
                                     </div>
                                 </div>
                                 <div className="detail-field">
                                     <span className="field-label">HS10</span>
-                                    <span className="field-value mono">{productData.hs10}</span>
+                                    <span className="field-value mono">{selectedProduct.hs}</span>
                                 </div>
                                 <div className="detail-field">
                                     <span className="field-label">Country</span>
-                                    <span className="field-value">{productData.country}</span>
+                                    <span className="field-value">{selectedProduct.country}</span>
                                 </div>
                                 <div className="detail-field">
                                     <span className="field-label">Enhanced Goods Description</span>
-                                    <span className="field-value">{productData.enhancedDesc}</span>
+                                    <span className="field-value">{selectedProduct.enhancedDesc}</span>
                                 </div>
                                 <div className="detail-field">
                                     <span className="field-label">Product ID</span>
-                                    <span className="field-value mono">{productData.productId}</span>
+                                    <span className="field-value mono">{selectedProduct.productId}</span>
                                 </div>
                                 <div className="detail-field">
                                     <span className="field-label">Documentation</span>
                                     <span className="field-value">
-                                        <a href="#" className="doc-link">📎 {productData.documentation}</a>
+                                        <a href="#" className="doc-link">📎 {selectedProduct.documentation}</a>
                                     </span>
                                 </div>
                                 <div className="detail-field">
                                     <span className="field-label">Company Name</span>
-                                    <span className="field-value">{productData.companyName}</span>
+                                    <span className="field-value">{selectedProduct.company}</span>
                                 </div>
                                 <div className="detail-field">
                                     <span className="field-label">Revenue</span>
-                                    <span className="field-value mono">{productData.revenue}</span>
+                                    <span className="field-value mono">{selectedProduct.revenue}</span>
                                 </div>
                                 <div className="detail-field">
                                     <span className="field-label">Duty Rate</span>
@@ -123,13 +123,13 @@ const CatalogView = () => {
                                 </div>
                                 <div className="detail-field">
                                     <span className="field-label">ALTA ID</span>
-                                    <span className="field-value mono">{productData.altaId}</span>
+                                    <span className="field-value mono">{selectedProduct.altaId}</span>
                                 </div>
                             </div>
                         </div>
                         <div className="detail-image-panel">
                             <div className="product-image-placeholder">
-                                <span style={{ fontSize: '5rem' }}>{productData.icon}</span>
+                                <span style={{ fontSize: '5rem' }}>{selectedProduct.icon}</span>
                                 <p>Product Image</p>
                             </div>
                         </div>
@@ -161,8 +161,8 @@ const CatalogView = () => {
             </div>
 
             <div className="catalog-grid">
-                {catalogProducts.map((p, i) => (
-                    <div className="catalog-card" key={i} onClick={() => setSelectedProduct(i)}>
+                {products.map((p, i) => (
+                    <div className="catalog-card" key={i} onClick={() => setSelectedProduct(p)}>
                         <div className="catalog-card-header">
                             <span className="catalog-card-icon">{p.icon}</span>
                             <div className="catalog-card-info">

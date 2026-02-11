@@ -10,6 +10,11 @@ import AtlasAI from './components/AtlasAI';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
 import Login from './pages/Login';
+import News from './pages/News';
+import About from './pages/About';
+import Careers from './pages/Careers';
+import ResourcesLanding from './pages/ResourcesLanding';
+import SolutionLayout from './pages/templates/SolutionLayout';
 import Dashboard from './pages/Dashboard';
 
 function LandingPage() {
@@ -57,6 +62,18 @@ function App() {
     <Routes>
       <Route path="/" element={<LandingPage />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/news" element={<News />} />
+
+      {/* Dynamic Solutions Route */}
+      <Route path="/solutions/:slug" element={<SolutionLayout />} />
+
+      {/* About & Careers */}
+      <Route path="/about" element={<About />} />
+      <Route path="/careers" element={<Careers />} />
+
+      {/* Resources Hub */}
+      <Route path="/resources" element={<ResourcesLanding />} />
+
       <Route path="/dashboard" element={<Dashboard />} />
     </Routes>
   );

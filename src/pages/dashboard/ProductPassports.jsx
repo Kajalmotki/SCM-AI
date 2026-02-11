@@ -1,11 +1,7 @@
 import React, { useState } from 'react';
 import './DashboardPanels.css';
 
-const materials = [
-    { name: 'Steel', pct: 43, color: '#8b5cf6' },
-    { name: 'Aluminum', pct: 35, color: '#3b82f6' },
-    { name: 'Copper', pct: 22, color: '#f59e0b' },
-];
+
 
 const usmcaData = [
     { label: 'Qualifies', value: 64, color: '#22c55e' },
